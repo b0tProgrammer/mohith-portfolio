@@ -17,6 +17,38 @@ import { useEffect, useState } from 'react'
 const projects = [
   {
     index: '01',
+    title: 'GrowEasy CSV Importer',
+    type: 'AI-powered CRM data ingestion',
+    description:
+      'A full-stack importer that maps unpredictable CSV exports into a clean CRM schema with AI, while keeping every row traceable.',
+    impact: [
+      'Provider-agnostic AI extraction with strict validation',
+      'Concurrent batch processing with retry and backoff',
+      'Live job progress over Server-Sent Events',
+    ],
+    stack: ['Next.js', 'TypeScript', 'Express', 'AI APIs', 'Docker'],
+    live: 'https://grow-easy-zeta-eight.vercel.app',
+    repo: 'https://github.com/b0tProgrammer/grow_easy',
+    accent: 'green',
+  },
+  {
+    index: '02',
+    title: 'Store Intelligence API',
+    type: 'Computer vision retail analytics',
+    description:
+      'An end-to-end pipeline that turns CCTV footage into structured events, operational KPIs, and a live analytics dashboard.',
+    impact: [
+      'Visitor, conversion, queue, and zone analytics',
+      'YOLO-based detection with multi-object tracking',
+      'Idempotent event ingestion and anomaly detection',
+    ],
+    stack: ['Python', 'FastAPI', 'YOLO', 'OpenCV', 'Docker'],
+    live: null,
+    repo: 'https://github.com/b0tProgrammer/Store_Intelligence_API',
+    accent: 'coral',
+  },
+  {
+    index: '03',
     title: 'VIIT Mock EAPCET',
     type: 'Production exam platform',
     description:
@@ -29,10 +61,10 @@ const projects = [
     stack: ['React', 'Node.js', 'Express', 'Prisma', 'PostgreSQL'],
     live: 'https://viitcet.vignaniit.edu.in/',
     repo: null,
-    accent: 'green',
+    accent: 'yellow',
   },
   {
-    index: '02',
+    index: '04',
     title: 'CF Analyzer',
     type: 'Competitive programming analytics',
     description:
@@ -45,10 +77,10 @@ const projects = [
     stack: ['Java', 'Spring Boot', 'React', 'PostgreSQL', 'Docker'],
     live: 'https://b0tprogrammer.github.io/CF-Analyzer/',
     repo: 'https://github.com/b0tProgrammer/cfAnalyzer',
-    accent: 'coral',
+    accent: 'blue',
   },
   {
-    index: '03',
+    index: '05',
     title: 'Taskyfer AI',
     type: 'AI-assisted task management',
     description:
@@ -61,10 +93,10 @@ const projects = [
     stack: ['Spring AI', 'Spring Boot', 'React', 'PostgreSQL', 'Docker'],
     live: 'https://ai-task-management-system-frontend-alpha.vercel.app/login',
     repo: 'https://github.com/b0tProgrammer/AiTaskManagementSystem-frontend',
-    accent: 'yellow',
+    accent: 'green',
   },
   {
-    index: '04',
+    index: '06',
     title: 'Smart Updater',
     type: 'Android workflow automation',
     description:
@@ -77,7 +109,7 @@ const projects = [
     stack: ['Kotlin', 'Android', 'Apache POI'],
     live: 'https://github.com/b0tProgrammer/SmartUpdater/releases/tag/v1.0',
     repo: 'https://github.com/b0tProgrammer/SmartUpdater',
-    accent: 'blue',
+    accent: 'coral',
   },
 ]
 
@@ -144,7 +176,7 @@ function App() {
             </div>
           </div>
           <div className="hero-stats">
-            <div><strong>31</strong><span>Public repositories</span></div>
+            <div><strong>30</strong><span>Public repositories</span></div>
             <div><strong>1715</strong><span>Codeforces max rating</span></div>
             <div><strong>8.85</strong><span>CGPA in Computer Science</span></div>
           </div>
@@ -168,7 +200,7 @@ function App() {
                 <div className="project-proof">
                   {project.impact.map((item) => <p key={item}><CheckCircle2 size={16} />{item}</p>)}
                   <div className="project-links">
-                    <ExternalLink href={project.live}>View live <ArrowUpRight size={17} /></ExternalLink>
+                    {project.live && <ExternalLink href={project.live}>View live <ArrowUpRight size={17} /></ExternalLink>}
                     {project.repo && <ExternalLink href={project.repo}>Source <GitBranch size={16} /></ExternalLink>}
                   </div>
                 </div>
@@ -176,7 +208,7 @@ function App() {
             ))}
           </div>
           <ExternalLink className="all-work" href="https://github.com/b0tProgrammer?tab=repositories">
-            Browse all 31 repositories <ArrowUpRight size={18} />
+            Browse all 30 repositories <ArrowUpRight size={18} />
           </ExternalLink>
         </section>
 
